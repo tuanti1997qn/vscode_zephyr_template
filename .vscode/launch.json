@@ -1,0 +1,34 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch",
+            // change to your device
+            "device": "nRF5340_xxAA_APP",
+            "cwd": "${workspaceFolder}",
+            "executable": "build/zephyr/zephyr.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "runToEntryPoint": "main",
+            "servertype": "jlink",
+            // uncomment to use zephyr sdk gdb
+            // "gdbPath": "${userHome}/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gdb",
+            "gdbPath": "gdb-multiarch",
+            "preLaunchTask": "West Build"
+        },
+        {
+            "name": "Attach",
+            // change to your device
+            "device": "nRF5340_xxAA_APP",
+            "cwd": "${workspaceFolder}",
+            "executable": "build/zephyr/zephyr.elf",
+            "request": "attach",
+            "type": "cortex-debug",
+            "runToEntryPoint": "main",
+            "servertype": "jlink",
+            // uncomment to use zephyr sdk gdb
+            // "gdbPath": "${userHome}/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gdb"
+            "gdbPath": "gdb-multiarch",
+        },
+    ]
+}

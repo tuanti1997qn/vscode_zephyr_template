@@ -1,0 +1,16 @@
+{
+    // Hush CMake
+    "cmake.configureOnOpen": false,
+    // IntelliSense
+    "C_Cpp.default.includePath": [
+        "${workspaceFolder}/**",
+        // add your include path here
+    ],
+    // change to your zephyr sdk path
+    "C_Cpp.default.compilerPath": "${userHome}/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc",
+    "C_Cpp.default.compileCommands": "${workspaceFolder}/build/compile_commands.json",
+    // File Associations
+    "files.associations": {
+        "kernel.h": "c"
+    }
+}

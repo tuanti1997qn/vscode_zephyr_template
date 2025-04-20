@@ -1,0 +1,80 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "West Build",
+            "type": "shell",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "linux": {
+                "command": "${workspaceFolder}/.vscode/util_script.sh"
+            },
+            "args": [
+                "build",
+                "-p",
+                "auto",
+                "-b",
+                "nrf5340dk/nrf5340/cpuapp",
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ],
+        },
+        {
+            "label": "West Configurable Build",
+            "type": "shell",
+            "group": {
+                "kind": "build"
+            },
+            "linux": {
+                "command": "${workspaceFolder}/.vscode/util_script.sh"
+            },
+            "args": [
+                "build",
+                "-p",
+                "${input:pristine}",
+                "-b",
+                "${input:board}"
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "West Flash",
+            "type": "shell",
+            "linux": {
+                "command": "${workspaceFolder}/.vscode/util_script.sh"
+            },
+            "args": [
+                "flash",
+                "--runner",
+                "jlink",
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ]
+        }
+    ],
+    "inputs": [
+        {
+            "id": "board",
+            "type": "promptString",
+            "default": "nrf5340dk/nrf5340/cpuapp",
+            "description": "See https://docs.zephyrproject.org/latest/boards/index.html"
+        },
+        {
+            "id": "pristine",
+            "type": "pickString",
+            "description": "Choose when to run a pristine build",
+            "default": "auto",
+            "options": [
+                "auto",
+                "always",
+                "never"
+            ]
+        }
+    ]
+}
