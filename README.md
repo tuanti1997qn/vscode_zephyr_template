@@ -21,4 +21,4 @@ For build and flash
 
 - Modify build args in [.vscode/tasks.json](.vscode/tasks.json) to build your board.
 
-Happy coding.
+F5 and enjoy debugging, hope so :yum:.
