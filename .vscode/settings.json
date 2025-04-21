@@ -13,4 +13,6 @@
     "files.associations": {
         "kernel.h": "c"
     }
+    // Config venv
+    "python.pythonPath":"${userHome}/zephyrproject/.venv/bin/python"
 }
